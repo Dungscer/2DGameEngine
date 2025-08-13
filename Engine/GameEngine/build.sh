@@ -1,0 +1,1 @@
+g++ src/*.cpp -o game -Iinclude -lSDL2
