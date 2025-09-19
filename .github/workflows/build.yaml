@@ -17,6 +17,7 @@ jobs:
           cmake .. -DCMAKE_BUILD_TYPE=Release
           cmake --build . --config Release --parallel
           sudo cmake --install . --config Release
+          
       - name: Add permission for building
         run: chmod +x ./Engine/build.sh   
       - name: Run build engine script
