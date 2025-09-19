@@ -30,6 +30,6 @@ jobs:
         run: ls -la
       - name: Run Build
         run: |
-          cd ./Engine
+          cd Engine
           chmod +x ./build.sh
           ./build.sh
