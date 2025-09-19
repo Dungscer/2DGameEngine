@@ -1,0 +1,12 @@
+name: Build
+run-name: Build
+on: [push]
+
+jobs:
+  checks:
+    name: Checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4     
+      - name: Run build engine script
+        run: ./Engine/build.sh
