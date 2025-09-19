@@ -26,6 +26,8 @@ jobs:
         run: sudo rm -rf ./SDL
 
       - uses: actions/checkout@v4
+      - name: Test
+        run: ls -la
       - name: Run Build
         run: |
           cd ./Engine
