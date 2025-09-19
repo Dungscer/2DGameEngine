@@ -9,8 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4  
       
+      - name: SDL install
+        run: |
+          git clone https://github.com/libsdl-org/SDL.git
       - name: Clone SDL repository
-        run: git clone https://github.com/libsdl-org/SDL.git
+        run: 
       - name: Make sdl build directory
         run: mkdir ./SDL/build
       - name: Navigate to build
