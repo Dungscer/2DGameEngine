@@ -7,6 +7,8 @@ jobs:
     name: Checks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4     
+      - uses: actions/checkout@v4  
+      - name: Add permission for building
+        run: chmod +x ./Engine/build.sh   
       - name: Run build engine script
         run: ./Engine/build.sh
