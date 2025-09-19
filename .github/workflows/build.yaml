@@ -22,11 +22,12 @@ jobs:
           cmake --build . --config Release --parallel
           sudo cmake --install . --config Release
 
-      - name: "Test"
-        run: ls -la
+      - name: "Clear SDL folder"
+        run: sudo rm -rf ./SDL
 
       - uses: actions/checkout@v4
-      - name: Add permission for building
-        run: chmod +x ./Engine/build.sh   
-      - name: Run build engine script
-        run: ./Engine/build.sh
+      - name: Run Build
+        run: |
+          cd ./Engine
+          chmod +x ./build.sh
+          ./build.sh
