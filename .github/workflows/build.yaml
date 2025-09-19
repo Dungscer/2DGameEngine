@@ -7,17 +7,20 @@ jobs:
     name: Checks
     runs-on: ubuntu-latest
     steps:
-      - name: Install SDL2
+      - name: Install SDL2 Dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y libsdl2-dev
 
-      
-      - name: Create build directory
-        run: mkdir build
-
-      - name: Configure project with CMake
-        run: cmake -S . -B build
+      - name: Install SDL2 
+        run: |
+          git clone https://github.com/libsdl-org/SDL
+          cd SDL
+          mkdir build
+          cd build
+          cmake .. -DCMAKE_BUILD_TYPE=Release
+          cmake --build . --config Release --parallel
+          sudo cmake --install . --config Release
 
       - name: "Test"
         run: ls -la
